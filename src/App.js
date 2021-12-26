@@ -1,5 +1,5 @@
 import './App.css';
-import { Container,FormGroup,FormControl,TextField } from '@mui/material';
+import { Container,FormGroup,FormControl,TextField,FormLabel } from '@mui/material';
 
 
 const finYear = [
@@ -10,10 +10,7 @@ const finYear = [
 const  TaxCalc = ()=>{
   return(
     <>
-       <label>Financial Year </label>
-       <Select options={finYear} />
-       <label>Tax Payer</label>
-       <input type="text" value ="Individual"> </input>
+      
     
     </>
   );
@@ -25,18 +22,18 @@ function App() {
     <div className="App">
       <Container maxWidth="sm">
       <h1 className="header"> TaxCalculator</h1>
-
         <FormGroup row>
           <FormControl>
               <TextField id="finYear"
                 placeholder="Username" 
                 variant="outlined"
-                value={username}
+                value= "2021"
                 label ="Financial Year"
               />
             </FormControl>         
 
         </FormGroup>
+        <br/>
         <FormGroup row>
           <FormControl>
               <TextField id="taxPayer"
@@ -47,6 +44,60 @@ function App() {
               />
             </FormControl>        
 
+        </FormGroup>
+        <FormGroup>
+            <FormControl component="fieldset">
+              <FormLabel >Income from Salary </FormLabel>
+              <TextField id="salaryIncome"
+                        variant="outlined"
+                        value=""
+                      />
+          </FormControl>
+        </FormGroup>
+        <FormGroup>
+            <FormControl component="fieldset">
+              <FormLabel >Income from Interest </FormLabel>
+              <TextField id="interestIncome"
+                        variant="outlined"
+                        value=""
+                      />
+          </FormControl>
+        </FormGroup>
+        <FormGroup>
+            <FormControl component="fieldset">
+              <FormLabel >Interest Paid on Home Loan </FormLabel>
+              <TextField id="homeLoanInterest"
+                        variant="outlined"
+                        value=""
+                      />
+          </FormControl>
+        </FormGroup>
+        <FormGroup>
+            <FormControl component="fieldset">
+              <FormLabel >Rental Income Received  </FormLabel>
+              <TextField id="rentalIncome"
+                        variant="outlined"
+                        value=""
+                      />
+          </FormControl>
+        </FormGroup>
+        <FormGroup>
+            <FormControl component="fieldset">
+              <FormLabel >Exemptions & Deductions from Salary  </FormLabel>
+              <TextField id="exemptions"
+                        variant="outlined"
+                        value=""
+                      />
+          </FormControl>
+        </FormGroup>
+        <FormGroup>
+            <FormControl component="fieldset">
+              <FormLabel >Other Income </FormLabel>
+              <TextField id="otherIncome"
+                        variant="outlined"
+                        value=""
+                      />
+          </FormControl>
         </FormGroup>
   
        </Container>
