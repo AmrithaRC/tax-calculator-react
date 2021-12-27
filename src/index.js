@@ -2,16 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import TaxCalc from './components/TaxCalc'
+import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
+import { Container} from '@mui/material';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <div className="App">
+    <Container maxWidth="md">
+      <h1 className="header"> TaxCalculator</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route default path="/" element={<App />} />
+          <Route path="/calculateTax" element={<TaxCalc />} />
+        </Routes>
+      </BrowserRouter>
+    </Container>
+  </div>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+

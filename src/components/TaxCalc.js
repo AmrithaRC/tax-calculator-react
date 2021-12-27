@@ -2,12 +2,14 @@ import * as React from 'react';
 
 import { FormGroup, FormControl, Select, TextField, Grid, MenuItem, Button } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+
 
 
 const TaxCalc = ({ handleClose }) => {
 
-    const { handleSubmit, control } = useForm();
-
+ 
+    const { handleSubmit, control} = useForm();
     const onSubmit = data => {
         console.log(data);
     };
@@ -15,15 +17,19 @@ const TaxCalc = ({ handleClose }) => {
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Grid container spacing={3}>
+                <Grid item xs={2}>
+                    <Button component={Link} to={'/'} variant="contained" color="primary">Home</Button>
+                </Grid>
+                <Grid item xs={10}></Grid>
                     <Grid item xs={6}>
                         <FormGroup>
                             <label>Financial Year</label>
-
                             <Controller
                                 name="financialYear"
                                 control={control}
                                 defaultValue=""
-                                render={({ field: { onChange, value }, fieldState: { error } }) => (
+                                render={({ field: { onChange, value },
+                                     fieldState: { error } }) => (
 
                                     <TextField
                                         select
